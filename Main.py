@@ -1,4 +1,4 @@
-from func import saving_files,drop_duplicate
+from func import saving_files,drop_duplicate,create_product_dir,create_each_product_dir
 from bs4 import BeautifulSoup
 from lxml import html
 import pandas as pd
@@ -167,3 +167,54 @@ def product_info(url,data,product_info_saving_path,each_product_saving_dir):
         saving_files(data=data,path=product_info_saving_path)
     except Exception as e:
         print(f'\n {e} ::::: ERROR OCCURED \n') 
+
+
+
+
+# def main_func():
+#     all_urls_path = pd.read_csv( os.path.join(os.path.dirname(os.path.dirname(__file__)),'All Urls/ALL URL.csv') )
+#     for urls_in_path in range(len(all_urls_path)):
+#         print(f'\n X CURRENTLY ON {urls_in_path} \n ')
+#         product_url = all_urls_path['URLS'][urls_in_path]
+#         print(product_url)    
+
+#         data = {'NAME':[],
+#                 'BRAND':[],
+#                 'PRODUCT_PRICE':[],
+#                 'NAIRA_PRICE':[],
+#                 'KEY_FEATURES':'',
+#                 'SPECIFICATION':'',
+#                 'BAG_INFO':'',
+#                 'SELLER_INFO':'',
+#                 'PRODUCT_PIC_URLS':''}
+        
+
+#         each_product_saving_dir = create_each_product_dir(each_product_dir_name= f'product{urls_in_path}_'+all_urls_path['CATEGORY'][urls_in_path] )
+        
+#         product_info(url=product_url,data=data,each_product_saving_dir=each_product_saving_dir,product_info_saving_path=os.path.join(each_product_saving_dir,product_url.split('/')[3].replace('.html','.csv')  ))
+
+#         print('LENGHT OF ALL LINKS = ',len(all_urls_path))
+#         print(f'\n X PREVIOUSLY ON {urls_in_path} \n ')
+
+
+
+
+
+def main_func_random():
+    all_urls_path = pd.read_csv( os.path.join(os.path.dirname(os.path.dirname(__file__)),'All Urls/ALL URL.csv') )
+    
+    product_url = random.choice(all_urls_path['URLS'])
+    print(product_url)    
+    data = {'NAME':[],
+            'BRAND':[],
+            'PRODUCT_PRICE':[],
+            'NAIRA_PRICE':[],
+            'KEY_FEATURES':'',
+            'SPECIFICATION':'',
+            'BAG_INFO':'',
+            'SELLER_INFO':'',
+            'PRODUCT_PIC_URLS':''}
+    
+
+    each_product_saving_dir = r'C:\Users\USER\PycharmProjects\MY MAIN FILES\Jumia\CURRENTLY FILE'
+    product_info(url=product_url,data=data,each_product_saving_dir=each_product_saving_dir,product_info_saving_path=os.path.join(each_product_saving_dir,product_url.split('/')[3].replace('.html','.csv')  ))
