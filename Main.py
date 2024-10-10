@@ -1,4 +1,4 @@
-from func import saving_files,drop_duplicate,create_product_dir,create_each_product_dir
+from func import saving_files,drop_duplicate
 from bs4 import BeautifulSoup
 from lxml import html
 import pandas as pd
