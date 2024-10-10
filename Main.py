@@ -216,5 +216,5 @@ def main_func_random():
             'PRODUCT_PIC_URLS':''}
     
 
-    each_product_saving_dir = r'C:\Users\USER\PycharmProjects\MY MAIN FILES\Jumia\CURRENTLY FILE'
+    each_product_saving_dir = r'ADD YOUR FILE PATH HERE'
     product_info(url=product_url,data=data,each_product_saving_dir=each_product_saving_dir,product_info_saving_path=os.path.join(each_product_saving_dir,product_url.split('/')[3].replace('.html','.csv')  ))
